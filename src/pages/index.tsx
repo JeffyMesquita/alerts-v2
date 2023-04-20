@@ -12,57 +12,37 @@ import {
 import { useRef, useState } from "react";
 
 const types = ["success", "error", "warning", "info"];
-const titles = [
-  "Alerta de Sucesso",
-  "Alerta de Erro",
-  "Alerta de Atenção",
-  "Alerta de Informação",
-];
-
-const messages = [
-  "Mensagem de sucesso",
-  "Mensagem de erro",
-  "Mensagem de atenção",
-  "Mensagem de informação",
-];
-
-const dates = [
-  new Date("2021-08-01T10:00:00.000Z"),
-  new Date("2021-08-02T19:00:00.000Z"),
-  new Date("2021-08-03T12:00:00.000Z"),
-  new Date("2021-08-04T15:00:00.000Z"),
-];
 
 const alerts = [
   {
     type: "success" as AlertType,
     title: "Alerta de Sucesso",
     message: "Mensagem de sucesso",
-    date: new Date("2021-08-01T10:00:00.000Z"),
+    date: new Date(Date.now()),
   },
   {
     type: "error" as AlertType,
     title: "Alerta de Erro",
     message: "Mensagem de erro",
-    date: new Date("2021-08-02T19:00:00.000Z"),
+    date: new Date(Date.now()),
   },
   {
     type: "warning" as AlertType,
     title: "Alerta de Atenção",
     message: "Mensagem de atenção",
-    date: new Date("2021-08-03T12:00:00.000Z"),
+    date: new Date(Date.now()),
   },
   {
     type: "info" as AlertType,
     title: "Alerta de Informação",
     message: "Mensagem de informação",
-    date: new Date("2021-08-04T15:00:00.000Z"),
+    date: new Date(Date.now()),
   },
   {
     type: "success" as AlertType,
     title: "Alerta de Sucesso",
     message: "Mensagem de sucesso",
-    date: new Date("2021-08-01T10:00:00.000Z"),
+    date: new Date(Date.now()),
   },
 ];
 
@@ -107,8 +87,8 @@ export default function Home() {
   }
 
   function generateRandomDate(): Date {
-    const startDate = new Date("2023-04-20T16:00:00.000Z");
-    const endDate = new Date(Date.now());
+    const startDate = new Date(Date.now());
+    const endDate = new Date(Date.now() + 1000 * 60 * 60 * 24 * 30);
     const timeDiff = endDate.getTime() - startDate.getTime();
     const randomTime =
       Math.floor(Math.random() * timeDiff) + startDate.getTime();
