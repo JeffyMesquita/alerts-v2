@@ -1,7 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
 import { Check, WarningOctagon, Warning, Info, X } from "@phosphor-icons/react";
-import { useEffect } from "react";
 
 export type AlertType = "success" | "error" | "warning" | "info";
 export type AlertAnimation = "default" | "elevator";
@@ -74,9 +73,7 @@ export function Alert({
   };
 
   return (
-    <AnimatePresence
-      onExitComplete={() => onRemove && onRemove()}
-    >
+    <AnimatePresence onExitComplete={() => onRemove && onRemove()}>
       <motion.li
         variants={animation === "default" ? alertDefault : alertElevator}
         initial="initial"

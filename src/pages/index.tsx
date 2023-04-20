@@ -95,7 +95,7 @@ export default function Home() {
     return new Date(randomTime);
   }
 
-  function removeElementFromArray(arr: any[], index: number): any[] {
+  function removeElementFromArray<T>(arr: T[], index: number): any[] {
     arr.splice(index, 1);
     return arr;
   }
@@ -112,12 +112,12 @@ export default function Home() {
       if (a.date < b.date) return 1;
       return 0;
     });
-    setAlertsList(sortedList);
-    setAlertUpdated({} as AlertProps);
 
     setTimeout(async () => {
       await updateAnimation();
-    }, 250);
+    }, 150);
+    setAlertsList(sortedList);
+    setAlertUpdated({} as AlertProps);
   }
 
   async function handleUpdateRandomALert() {
@@ -144,7 +144,7 @@ export default function Home() {
     setCurrentAnimation("elevator");
     setTimeout(async () => {
       await addAlertUpdatedToArray(newAlert);
-    }, 250);
+    }, 350);
   }
 
   function handleRemoveAlert(id: string) {
