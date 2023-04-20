@@ -4,10 +4,10 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body>
+      <body className="bg-zinc-700">
         <Main />
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }
